@@ -8,13 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaFX" />
-        <module name="Bookshop" />
-      </profile>
-      <profile name="Annotation profile for spring-boot" enabled="true">
-        <sourceOutputDir name="../../spring-boot/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../../spring-boot/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
         <module name="spring-boot" />
+        <module name="Bookshop" />
       </profile>
     </annotationProcessing>
   </component>
