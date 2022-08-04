@@ -16,6 +16,8 @@ public class Author {
     private long id;
     private String name;
     private String surname;
+    private String gender;
+    private String dateBirth;
 
     @OneToMany(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "authorId")
