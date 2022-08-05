@@ -21,6 +21,6 @@ public class Book {
     private String title;
     private String publisher;
     private String category;
-    private LocalDateTime release_date;
+    private String release_date;
 
 }

@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="900.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.BookshopController">
+<VBox alignment="TOP_CENTER" prefHeight="900.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Controller.BookshopController">
    <TextField alignment="CENTER" maxWidth="400.0" promptText="Insert value to search in table">
       <font>
          <Font size="16.0" />
       </font>
    </TextField>
 
-    <TableView fx:id="mainTable" maxWidth="1000.0">
+    <TableView fx:id="mainTable" maxWidth="1000.0" onMouseClicked="#clickRowInAuthorTable">
       <columnResizePolicy>
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
       </columnResizePolicy></TableView>
