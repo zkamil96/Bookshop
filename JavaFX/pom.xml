@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.7.1</junit.version>
     </properties>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -38,6 +39,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.3</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,7 +66,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.javafx/com.example.javafx.HelloApplication</mainClass>
+                            <mainClass>com.example.javafx/com.example.javafx.BookshopApplication</mainClass>
                         </configuration>
                     </execution>
                 </executions>
