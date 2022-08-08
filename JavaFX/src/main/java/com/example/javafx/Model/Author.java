@@ -8,7 +8,6 @@ public class Author {
     private String name;
     private String surname;
     private String gender;
-    private String dateBirth;
     private List<Book> books;
 
     @Override
@@ -48,14 +47,6 @@ public class Author {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public String getDateBirth() {
-        return dateBirth;
-    }
-
-    public void setDateBirth(String dateBirth) {
-        this.dateBirth = dateBirth;
     }
 
     public List<Book> getBooks() {

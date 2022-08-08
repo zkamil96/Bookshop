@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="315.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Controller.AddAuthorViewController">
+   <children>
+      <Label fx:id="alertAuthor" />
+      <Label text="Name" />
+      <TextField fx:id="nameField" />
+      <Label text="Surname" />
+      <TextField fx:id="surnameField" />
+      <Label text="Gender" />
+      <ChoiceBox fx:id="genderField" prefWidth="150.0" />
+      <Button fx:id="add" mnemonicParsing="false" onAction="#addAuthor" text="Add" />
+
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

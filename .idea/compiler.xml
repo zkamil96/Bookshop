@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="JavaFX" />
         <module name="spring_boot" />
+        <module name="spring-boot" />
         <module name="Bookshop" />
         <module name="demo" />
       </profile>
@@ -19,6 +20,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-boot" options="-parameters" />
       <module name="spring_boot" options="-parameters" />
     </option>
   </component>

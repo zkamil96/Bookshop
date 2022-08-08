@@ -1,5 +1,6 @@
 package com.example.springboot.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,10 +20,9 @@ public class Author {
     private String name;
     private String surname;
     private String gender;
-    private String dateBirth;
 
     @OneToMany(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "authorId")
+    @JoinColumn(name = "authorId", updatable = false, insertable = false)
     private List<Book> books;
 
 }
