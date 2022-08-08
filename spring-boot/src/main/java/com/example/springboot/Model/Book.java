@@ -1,5 +1,6 @@
 package com.example.springboot.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,8 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +24,6 @@ public class Book {
     private String title;
     private String publisher;
     private String category;
-    private String release_date;
+    private String releaseYear;
 
 }

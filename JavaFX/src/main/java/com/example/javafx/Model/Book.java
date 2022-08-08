@@ -8,7 +8,7 @@ public class Book {
     private String title;
     private String publisher;
     private String category;
-    private String release_date;
+    private String releaseYear;
 
     public long getId() {
         return id;
@@ -50,11 +50,11 @@ public class Book {
         this.category = category;
     }
 
-    public String getRelease_date() {
-        return release_date;
+    public String getReleaseYear() {
+        return releaseYear;
     }
 
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
+    public void setReleaseYear(String releaseYear) {
+        this.releaseYear = releaseYear;
     }
 }
