@@ -5,6 +5,7 @@ module com.example.javafx {
     opens com.example.javafx to javafx.fxml;
     requires java.net.http;
     requires com.fasterxml.jackson.databind;
+    requires lombok;
     exports com.example.javafx;
     exports com.example.javafx.Service;
     opens com.example.javafx.Service to javafx.fxml;
