@@ -14,3 +14,4 @@ module com.example.javafx {
     exports com.example.javafx.Controller;
     opens com.example.javafx.Controller to javafx.fxml;
 }
+
