@@ -1,6 +1,6 @@
 package com.example.springboot.Repository;
 
-import com.example.springboot.Model.Author;
+import com.example.springboot.Repository.Model.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

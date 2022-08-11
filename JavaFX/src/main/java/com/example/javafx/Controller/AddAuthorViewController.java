@@ -1,7 +1,7 @@
 package com.example.javafx.Controller;
 
 import com.example.javafx.Model.Author;
-import com.example.javafx.Service.BookshopService;
+import com.example.javafx.Service.AuthorService;
 import com.example.javafx.Validator.Validators;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,8 +41,8 @@ public class AddAuthorViewController implements Initializable {
             author.setName(name);
             author.setSurname(surname);
             author.setGender(gender);
-            BookshopService bookshopService = new BookshopService();
-            bookshopService.addAuthor(author);
+            AuthorService authorService = new AuthorService();
+            authorService.addAuthor(author);
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
             stage.getOnCloseRequest().handle(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));

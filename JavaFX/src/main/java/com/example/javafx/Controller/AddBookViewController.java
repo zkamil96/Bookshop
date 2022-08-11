@@ -1,7 +1,7 @@
 package com.example.javafx.Controller;
 
 import com.example.javafx.Model.Book;
-import com.example.javafx.Service.BookshopService;
+import com.example.javafx.Service.BookService;
 import com.example.javafx.Validator.Validators;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,11 +47,11 @@ public class AddBookViewController implements Initializable {
             book.setPublisher(publisher);
             book.setCategory(category);
             book.setReleaseYear(releaseYear);
-            BookshopService bookshopService = new BookshopService();
+            BookService bookService = new BookService();
             Node source = (Node) event.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
             long id = (long) stage.getUserData();
-            bookshopService.addBook(book, id);
+            bookService.addBook(book, id);
             stage.getOnCloseRequest().handle(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
             stage.close();
         }

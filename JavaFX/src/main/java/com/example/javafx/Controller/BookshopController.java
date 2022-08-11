@@ -3,7 +3,8 @@ package com.example.javafx.Controller;
 import com.example.javafx.BookshopApplication;
 import com.example.javafx.Model.Author;
 import com.example.javafx.Model.Book;
-import com.example.javafx.Service.BookshopService;
+import com.example.javafx.Service.AuthorService;
+import com.example.javafx.Service.BookService;
 import com.example.javafx.Validator.Validators;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +28,8 @@ import java.util.ResourceBundle;
 
 
 public class BookshopController implements Initializable {
-    private BookshopService bookshopService = new BookshopService();
+    private AuthorService authorService = new AuthorService();
+    private BookService bookService = new BookService();
     @FXML
     private TableView<Author> mainTable;
     @FXML
@@ -43,14 +45,14 @@ public class BookshopController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         generateTableColumns();
 
-        ObservableList<Author> observableAuthorList = bookshopService.getAuthors();
+        ObservableList<Author> observableAuthorList = authorService.getAuthors();
         mainTable.getItems().addAll(observableAuthorList);
 
         TextFormatter<String> textFormatter = Validators.letterAndDigitTextFormatter();
         searchAuthorField.setTextFormatter(textFormatter);
 
         searchAuthorField.textProperty().addListener((observableValue, s, t1) -> {
-            List<Author> authors = bookshopService.searchAuthor(t1.trim());
+            List<Author> authors = authorService.searchAuthor(t1.trim());
             mainTable.getItems().clear();
             mainTable.getItems().addAll(authors);
             secondTable.getItems().clear();
@@ -62,7 +64,7 @@ public class BookshopController implements Initializable {
         secondTable.getItems().clear();
         Author author = mainTable.getSelectionModel().getSelectedItem();
         if (author != null) {
-            ObservableList<Book> books = bookshopService.getBooks(author.getId());
+            ObservableList<Book> books = bookService.getBooks(author.getId());
             secondTable.getItems().addAll(books);
         }
     }
@@ -96,7 +98,7 @@ public class BookshopController implements Initializable {
         Author selectedItem = mainTable.getSelectionModel().getSelectedItem();
 
         if (selectedItem != null) {
-            bookshopService.deleteAuthor(selectedItem.getId());
+            authorService.deleteAuthor(selectedItem.getId());
             initAuthorTable();
             secondTable.getItems().clear();
         } else {
@@ -110,7 +112,7 @@ public class BookshopController implements Initializable {
 
         if (book != null) {
             long authorId = book.getAuthorId();
-            bookshopService.deleteBook(book.getId());
+            bookService.deleteBook(book.getId());
             initBookTable(authorId);
         } else {
             makeAlert("Information Dialog", "Select book first");
@@ -119,12 +121,12 @@ public class BookshopController implements Initializable {
 
     public void initAuthorTable() {
         mainTable.getItems().clear();
-        mainTable.getItems().addAll(bookshopService.getAuthors());
+        mainTable.getItems().addAll(authorService.getAuthors());
     }
 
     public void initBookTable(long id) {
         secondTable.getItems().clear();
-        secondTable.getItems().addAll(bookshopService.getBooks(id));
+        secondTable.getItems().addAll(bookService.getBooks(id));
     }
 
     private void makeAlert(String title, String contentText) {
@@ -154,8 +156,8 @@ public class BookshopController implements Initializable {
     private void generateTableColumns() {
         List<TableColumn> authorColumns = new ArrayList<>();
         List<TableColumn> bookColumns = new ArrayList<>();
-        List<Field> authorFieldNames = List.of(new Author().getClass().getDeclaredFields());
-        List<Field> bookFieldNames = List.of(new Book().getClass().getDeclaredFields());
+        List<Field> authorFieldNames = List.of(Author.class.getDeclaredFields());
+        List<Field> bookFieldNames = List.of(Book.class.getDeclaredFields());
         for (Field field : authorFieldNames) {
             if (!field.getName().equals("books") && !field.getName().equals("id")) {
                 authorColumns.add(new TableColumn<Author, String>(field.getName()));

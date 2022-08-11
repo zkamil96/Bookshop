@@ -1,7 +1,7 @@
 package com.example.springboot.Controller;
 
-import com.example.springboot.Model.Author;
-import com.example.springboot.Model.Book;
+import com.example.springboot.Repository.Model.Author;
+import com.example.springboot.Repository.Model.Book;
 import com.example.springboot.Service.AuthorService;
 import com.example.springboot.Service.BookService;
 import lombok.RequiredArgsConstructor;

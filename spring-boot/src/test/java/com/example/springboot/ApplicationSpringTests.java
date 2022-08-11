@@ -1,7 +1,7 @@
 package com.example.springboot;
 
-import com.example.springboot.Model.Author;
-import com.example.springboot.Model.Book;
+import com.example.springboot.Repository.Model.Author;
+import com.example.springboot.Repository.Model.Book;
 import com.example.springboot.Repository.AuthorRepository;
 import com.example.springboot.Repository.BookRepository;
 import com.example.springboot.Service.AuthorService;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
-class ApplicationTests {
+class ApplicationSpringTests {
     @MockBean
     private AuthorRepository authorRepository;
     @MockBean
