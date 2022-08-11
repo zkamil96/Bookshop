@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class BookshopApplication extends Application {
 
-
     @Override
     public void start(Stage stage) {
         try {
