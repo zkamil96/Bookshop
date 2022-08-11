@@ -1,17 +1,15 @@
 package com.example.springboot;
 
-import com.example.springboot.Model.Author;
-import com.example.springboot.Model.Book;
+import com.example.springboot.Repository.Model.Author;
+import com.example.springboot.Repository.Model.Book;
 import com.example.springboot.Repository.AuthorRepository;
 import com.example.springboot.Repository.BookRepository;
 import com.example.springboot.Service.AuthorService;
 import com.example.springboot.Service.BookService;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -20,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
-class ApplicationTests {
+class ApplicationSpringTests {
     @MockBean
     private AuthorRepository authorRepository;
     @MockBean

@@ -1,6 +1,6 @@
 package com.example.springboot.Service;
 
-import com.example.springboot.Model.Author;
+import com.example.springboot.Repository.Model.Author;
 import com.example.springboot.Repository.AuthorRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

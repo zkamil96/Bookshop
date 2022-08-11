@@ -10,9 +10,10 @@ import java.io.IOException;
 
 public class BookshopApplication extends Application {
 
+
     @Override
     public void start(Stage stage) {
-        try{
+        try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bookshop-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 900);
             stage.setTitle("Bookshop!");
