@@ -12,6 +12,5 @@ Features
 
 How to run
 <ol>
-<li>To run tests - run ApplicationSpringTests.java</li>
 <li>To run app - ApplicationSpring.java</li>
 </ol>
