@@ -10,10 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ApplicationSpring {
 
     public static void main(String[] args) {
-
         SpringApplication.run(ApplicationSpring.class, args);
         BookshopApplication.main(null);
-
     }
 
 }
