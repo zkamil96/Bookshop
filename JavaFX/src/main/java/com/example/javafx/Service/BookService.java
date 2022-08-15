@@ -16,12 +16,13 @@ import java.util.List;
 public class BookService {
 
     private static final String API_URL = "http://localhost:8080";
+    HttpClient client = HttpClient.newHttpClient();
+    ObjectMapper mapper = new ObjectMapper();
 
     public ObservableList<Book> getBooks(long id) {
         String url = API_URL + "/authors/" + id + "/books";
         ObservableList<Book> observableBookList = FXCollections.observableArrayList();
         try {
-            HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .GET()
                     .header("accept", "application/json")
@@ -29,7 +30,6 @@ public class BookService {
                     .build();
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            ObjectMapper mapper = new ObjectMapper();
             List<Book> book = mapper.readValue(response.body(), new TypeReference<>() {
             });
             observableBookList.addAll(book);
@@ -42,7 +42,6 @@ public class BookService {
     public void deleteBook(long id) {
         String url = API_URL + "/authors/" + id + "/books";
         try {
-            HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .DELETE()
                     .header("accept", "application/json")
@@ -58,10 +57,7 @@ public class BookService {
     public void addBook(Book book, long id) {
         String url = API_URL + "/authors/" + id + "/books";
         try {
-            ObjectMapper mapper = new ObjectMapper();
             String json = mapper.writeValueAsString(book);
-
-            HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .POST(HttpRequest.BodyPublishers.ofString(json))
                     .header("Content-Type", "application/json")
