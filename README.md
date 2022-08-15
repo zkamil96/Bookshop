@@ -4,13 +4,13 @@
 <li>Spring-boot - module responsible for backend of the application.</li>
 </ol>
 
-##Features
+Features
 <ol>
 <li>Runs with Java 11</li>
 <li>creates, deletes authors/books from/into h2 in memory database</li>
 </ol>
 
-##How to run
+How to run
 <ol>
 <li>To run tests - run ApplicationSpringTests.java</li>
 <li>To run app - ApplicationSpring.java</li>
