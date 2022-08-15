@@ -12,5 +12,5 @@ Features
 
 How to run
 <ol>
-<li>To run app - ApplicationSpring.java</li>
+<li>To run application - run ApplicationSpring.java</li>
 </ol>
